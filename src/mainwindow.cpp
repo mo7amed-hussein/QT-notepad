@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include<QTextStream>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -36,4 +36,20 @@ void MainWindow::createNewDoc()
 {
     fileName= "";
     editor->clear();
+}
+
+void MainWindow::openDocument()
+{
+    QString filePath= QFileDialog::getOpenFileName(this,"select text file ",QDir::currentPath(),"All files (*.*);;");
+    if(filePath != "")
+    {
+        createNewDoc();
+        QFile file(filePath);
+         file.open(QIODevice::Text | QIODevice::ReadOnly);
+         QTextStream in(&file);
+         while (! in.atEnd()) {
+            editor->append(in.readLine());
+         }
+         fileName= filePath;
+    }
 }

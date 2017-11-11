@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include<QFileDialog>
 #include <QMainWindow>
 #include <QTextEdit>
 #include<QLabel>
@@ -13,6 +13,7 @@ public:
 
     void createStatusBar();
     void createNewDoc();
+    void openDocument();
 
 signals:
 
