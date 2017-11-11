@@ -14,7 +14,7 @@ public:
     void createStatusBar();
     void createNewDoc();
     void openDocument();
-
+    void saveDocument();
 signals:
 
 public slots:

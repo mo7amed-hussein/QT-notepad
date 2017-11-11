@@ -53,3 +53,15 @@ void MainWindow::openDocument()
          fileName= filePath;
     }
 }
+
+void MainWindow::saveDocument()
+{
+    QFile file(fileName);
+    if(file.open(QFile::Text | QFile::WriteOnly))
+    {
+        QTextStream out(&file);
+        out<<editor->toPlainText();
+        file.close();
+    }
+
+}
