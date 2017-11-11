@@ -1,0 +1,13 @@
+
+#ignore build folder
+build/
+#ignore moc folder
+moc/
+#ignore obj folder
+obj/
+#ignore makefile 
+Makefile
+
+#ignore .user file
+*.pro.user
+
