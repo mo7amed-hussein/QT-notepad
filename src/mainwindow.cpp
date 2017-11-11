@@ -31,3 +31,9 @@ void MainWindow::updateStatusBar(int l,int c)
     QString str = tr("Ln: %1 , Col: %2 ").arg(l).arg(c);
     cursorPosition->setText(str);
 }
+
+void MainWindow::createNewDoc()
+{
+    fileName= "";
+    editor->clear();
+}

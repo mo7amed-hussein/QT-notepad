@@ -12,6 +12,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
 
     void createStatusBar();
+    void createNewDoc();
 
 signals:
 
@@ -20,6 +21,7 @@ public slots:
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
+    QString fileName;
 };
 
 #endif // MAINWINDOW_H
