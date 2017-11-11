@@ -17,11 +17,13 @@ MOC_DIR = ./moc
 
 
 SOURCES += \ 
-    src/main.cpp 
+    src/main.cpp \ 
+    src/mainwindow.cpp
 
 
 
 
 
 HEADERS += \ 
+    include/mainwindow.h
 
