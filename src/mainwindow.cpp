@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     createStatusBar();
 
+
+
 }
 
 void MainWindow::createStatusBar()
@@ -22,4 +24,10 @@ void MainWindow::createStatusBar()
     cursorPosition->setFrameStyle(QFrame::NoFrame);
     this->statusBar()->addPermanentWidget(cursorPosition,0);
     statusBar()->adjustSize();
+}
+
+void MainWindow::updateStatusBar(int l,int c)
+{
+    QString str = tr("Ln: %1 , Col: %2 ").arg(l).arg(c);
+    cursorPosition->setText(str);
 }
