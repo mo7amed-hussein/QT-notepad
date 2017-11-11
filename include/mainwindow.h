@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTextEdit>
 
 class MainWindow : public QMainWindow
 {
@@ -14,7 +15,7 @@ signals:
 public slots:
 
 private:
-
+    QTextEdit * editor;
 };
 
 #endif // MAINWINDOW_H
