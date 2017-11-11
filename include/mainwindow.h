@@ -3,19 +3,23 @@
 
 #include <QMainWindow>
 #include <QTextEdit>
-
+#include<QLabel>
+#include<QStatusBar>
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
 
+    void createStatusBar();
+
 signals:
 
 public slots:
 
 private:
-    QTextEdit * editor;
+    QTextEdit * editor;//text editor
+    QLabel *cursorPosition;//editor cursor position label
 };
 
 #endif // MAINWINDOW_H

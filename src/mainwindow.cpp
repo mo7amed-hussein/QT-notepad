@@ -8,4 +8,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     this->setCentralWidget(editor);
     //resize notepad to 600X800
     this->resize(800,600);
+
+    createStatusBar();
+
+}
+
+void MainWindow::createStatusBar()
+{
+    //statusbar widget
+    cursorPosition = new QLabel;
+    cursorPosition->setText("Ln: 0 , Col: 0 ");
+    cursorPosition->setAlignment(Qt::AlignHCenter);
+    cursorPosition->setFrameStyle(QFrame::NoFrame);
+    this->statusBar()->addPermanentWidget(cursorPosition,0);
+    statusBar()->adjustSize();
 }
