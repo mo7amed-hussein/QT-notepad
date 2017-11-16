@@ -17,7 +17,8 @@ public:
     void saveDocument();
     void saveDocumentAs();
     void paste();
-
+    void echoTime();
+    void selectAll();
 signals:
 
 public slots:

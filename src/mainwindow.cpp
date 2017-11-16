@@ -197,3 +197,8 @@ void MainWindow::echoTime()
     QString str = time.toString("dd/mm/yyyy - HH:mm:ss A");
     editor->append(str);
 }
+
+void MainWindow::selectAll()
+{
+    editor->selectAll();
+}
