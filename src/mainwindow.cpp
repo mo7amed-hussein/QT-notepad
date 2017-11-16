@@ -115,7 +115,7 @@ void MainWindow::createMenuBar()
     //exit action
     QAction *exitAc = new QAction(tr("Exit"),this);
     exitAc->setShortcut(QKeySequence::Quit);
-//    connect(saveasAc,&QAction::triggered,this,&MainWindow::saveDocument);
+    connect(exitAc,&QAction::triggered,this,&MainWindow::quitApp);
     fileMenu->addAction(exitAc);
 
 
