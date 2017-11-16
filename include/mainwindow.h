@@ -35,6 +35,11 @@ private:
     QLabel *cursorPosition;//editor cursor position label
     QString fileName;
     QString filePath;
+
+    QAction *cutAc;
+    QAction *copyAc;
+    QAction *pasteAc;
+    QAction *undoAc;
 };
 
 #endif // MAINWINDOW_H

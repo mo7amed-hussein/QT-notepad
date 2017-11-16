@@ -134,6 +134,52 @@ void MainWindow::createMenuBar()
     connect(exitAc,&QAction::triggered,this,&MainWindow::quitApp);
     fileMenu->addAction(exitAc);
 
+    //create file menu
+    QMenu *editMenu = menuBar()->addMenu(tr("&Edit"));
+
+    //undo action
+    undoAc = new QAction(tr("Undo"),this);
+    undoAc->setShortcut(QKeySequence::Undo);
+    undoAc->setEnabled(false);
+    connect(undoAc,&QAction::triggered,this,&MainWindow::undo);
+    editMenu->addAction(undoAc);
+
+    editMenu->addSeparator();
+
+    //cut action
+    cutAc = new QAction(tr("Cut"),this);
+    cutAc->setShortcut(QKeySequence::Cut);
+    cutAc->setEnabled(false);
+    connect(cutAc,&QAction::triggered,this,&MainWindow::cut);
+    editMenu->addAction(cutAc);
+
+    //copy action
+    copyAc = new QAction(tr("Copy"),this);
+    copyAc->setShortcut(QKeySequence::Copy);
+    copyAc->setEnabled(false);
+    connect(copyAc,&QAction::triggered,this,&MainWindow::copy);
+    editMenu->addAction(copyAc);
+
+    //paste action
+    pasteAc = new QAction(tr("Paste"),this);
+    pasteAc->setShortcut(QKeySequence::Paste);
+    pasteAc->setEnabled(false);
+    connect(pasteAc,&QAction::triggered,this,&MainWindow::paste);
+    editMenu->addAction(pasteAc);
+
+    editMenu->addSeparator();
+
+    //selectall action
+    QAction *selectAc = new QAction(tr("SelectAll"),this);
+    selectAc->setShortcut(QKeySequence::SelectAll);
+    connect(selectAc,&QAction::triggered,this,&MainWindow::selectAll);
+    editMenu->addAction(selectAc);
+
+    //time/date action
+    QAction *timeAc = new QAction(tr("Time/Date"),this);
+    timeAc->setShortcut(QKeySequence::Refresh);
+    connect(timeAc,&QAction::triggered,this,&MainWindow::echoTime);
+    editMenu->addAction(timeAc);
 
 }
 
