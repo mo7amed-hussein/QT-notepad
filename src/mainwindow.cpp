@@ -110,7 +110,7 @@ void MainWindow::createMenuBar()
     //print action
     QAction *printAc = new QAction(tr("Print"),this);
     printAc->setShortcut(QKeySequence::Print);
- //   connect(saveasAc,&QAction::triggered,this,&MainWindow::saveDocument);
+    connect(printAc,&QAction::triggered,this,&MainWindow::print);
     fileMenu->addAction(printAc);
     fileMenu->addSeparator();
 
