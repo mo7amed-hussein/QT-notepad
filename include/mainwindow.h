@@ -16,6 +16,7 @@ public:
     void openDocument();
     void saveDocument();
     void saveDocumentAs();
+    void paste();
 
 signals:
 

@@ -6,6 +6,7 @@
 #include<QApplication>
 #include<QPrintDialog>
 #include<QPrinter>
+#include<QDateTime>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -184,3 +185,10 @@ void MainWindow::copy()
 {
     editor->copy();
 }
+
+void MainWindow::paste()
+{
+    editor->paste();
+}
+
+
