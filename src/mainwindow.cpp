@@ -191,4 +191,9 @@ void MainWindow::paste()
     editor->paste();
 }
 
-
+void MainWindow::echoTime()
+{
+    QDateTime time = QDateTime::currentDateTimeUtc();
+    QString str = time.toString("dd/mm/yyyy - HH:mm:ss A");
+    editor->append(str);
+}
