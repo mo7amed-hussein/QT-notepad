@@ -2,7 +2,8 @@
 #include<QTextStream>
 #include<QMenu>
 #include<QMenuBar>
-
+#include<QMessageBox>
+#include<QApplication>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -118,4 +119,16 @@ void MainWindow::createMenuBar()
     fileMenu->addAction(exitAc);
 
 
+}
+
+void MainWindow::quitApp()
+{
+    QMessageBox msg(this);
+    msg.setText("close Notepad ");
+    msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = msg.exec();
+    if(ret== QMessageBox::Yes)
+    {
+        qApp->quit();
+    }
 }
