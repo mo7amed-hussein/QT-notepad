@@ -172,6 +172,13 @@ void MainWindow::createMenuBar()
 
     editMenu->addSeparator();
 
+    //go to line action
+    QAction * lineAc = new QAction(tr("Go To .."),this);
+    connect(lineAc,&QAction::triggered,this,&MainWindow::gotoLine);
+    editMenu->addAction(lineAc);
+
+    editMenu->addSeparator();
+
     //selectall action
     QAction *selectAc = new QAction(tr("SelectAll"),this);
     selectAc->setShortcut(QKeySequence::SelectAll);
