@@ -4,6 +4,8 @@
 #include<QMenuBar>
 #include<QMessageBox>
 #include<QApplication>
+#include<QPrintDialog>
+#include<QPrinter>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -130,5 +132,16 @@ void MainWindow::quitApp()
     if(ret== QMessageBox::Yes)
     {
         qApp->quit();
+    }
+}
+
+void MainWindow::print()
+{
+    QPrinter printer(QPrinter::HighResolution);
+    QPrintDialog printDig(&printer,this);
+    if(printDig.exec() == QDialog::Accepted)
+    {
+        editor->print(&printer);
+
     }
 }

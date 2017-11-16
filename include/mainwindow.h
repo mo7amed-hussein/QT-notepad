@@ -21,6 +21,7 @@ public slots:
     void updateStatusBar(int l,int c);
     void retCursorPos();
     void quitApp();
+    void print();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
