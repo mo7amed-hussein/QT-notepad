@@ -149,3 +149,14 @@ void MainWindow::print()
 
     }
 }
+
+void MainWindow::saveDocumentAs()
+{
+    QString newFileName=QFileDialog::getSaveFileName(this,tr("save as"));
+        if(newFileName.isEmpty())
+            return;
+        this->filePath = newFileName;
+        this->fileName = newFileName;
+        this->setWindowTitle(fileName+" :: NotePad");
+        saveDocument();
+}

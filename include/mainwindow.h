@@ -15,6 +15,7 @@ public:
     void createNewDoc();
     void openDocument();
     void saveDocument();
+    void saveDocumentAs();
 signals:
 
 public slots:
