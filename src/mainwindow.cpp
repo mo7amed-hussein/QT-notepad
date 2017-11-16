@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     createStatusBar();
 
-
+    connect(editor,&QTextEdit::cursorPositionChanged,this,&MainWindow::retCursorPos);
 
 }
 
@@ -64,4 +64,10 @@ void MainWindow::saveDocument()
         file.close();
     }
 
+}
+
+void MainWindow::retCursorPos()
+{
+    QTextCursor cur = editor->textCursor();
+    updateStatusBar(cur.blockNumber(),cur.columnNumber());
 }
