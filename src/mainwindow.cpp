@@ -7,6 +7,7 @@
 #include<QPrintDialog>
 #include<QPrinter>
 #include<QDateTime>
+#include<QInputDialog>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -249,4 +250,14 @@ void MainWindow::echoTime()
 void MainWindow::selectAll()
 {
     editor->selectAll();
+}
+
+void MainWindow::gotoLine()
+{
+    bool ok;
+    QString line = QInputDialog::getText(this,"Go To Line","Line Number",QLineEdit::Normal,"1",&ok);
+    if(ok && !line.isEmpty())
+    {
+        //....
+    }
 }

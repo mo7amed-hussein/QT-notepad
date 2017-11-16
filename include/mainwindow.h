@@ -19,6 +19,7 @@ public:
     void paste();
     void echoTime();
     void selectAll();
+    void gotoLine();
 signals:
 
 public slots:
