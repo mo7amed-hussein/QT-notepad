@@ -26,6 +26,7 @@ private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
     QString fileName;
+    QString filePath;
 };
 
 #endif // MAINWINDOW_H

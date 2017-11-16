@@ -40,7 +40,9 @@ void MainWindow::updateStatusBar(int l,int c)
 
 void MainWindow::createNewDoc()
 {
-    fileName= "";
+    fileName= "New";
+    filePath= "";
+    this->setWindowTitle(fileName+" :: NotePad");
     editor->clear();
 }
 
