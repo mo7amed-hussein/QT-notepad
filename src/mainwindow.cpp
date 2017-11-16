@@ -66,13 +66,22 @@ void MainWindow::openDocument()
 
 void MainWindow::saveDocument()
 {
-    QFile file(fileName);
-    if(file.open(QFile::Text | QFile::WriteOnly))
+    if(filePath != "")
     {
-        QTextStream out(&file);
-        out<<editor->toPlainText();
-        file.close();
+
+        QFile file(filePath);
+        if(file.open(QFile::Text | QFile::WriteOnly))
+        {
+            QTextStream out(&file);
+            out<<editor->toPlainText();
+            file.close();
+        }
     }
+    else
+    {
+        saveDocumentAs();
+    }
+
 
 }
 
