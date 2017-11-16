@@ -169,3 +169,8 @@ void MainWindow::saveDocumentAs()
         this->setWindowTitle(fileName+" :: NotePad");
         saveDocument();
 }
+
+void MainWindow::undo()
+{
+    editor->undo();
+}
