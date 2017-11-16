@@ -16,6 +16,7 @@ public:
     void openDocument();
     void saveDocument();
     void saveDocumentAs();
+
 signals:
 
 public slots:
@@ -25,6 +26,8 @@ public slots:
     void print();
     void undo();
     void cut();
+    void copy();
+
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label

@@ -179,3 +179,8 @@ void MainWindow::cut()
 {
     editor->cut();
 }
+
+void MainWindow::copy()
+{
+    editor->copy();
+}
