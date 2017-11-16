@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     createStatusBar();
     createMenuBar();
     connect(editor,&QTextEdit::cursorPositionChanged,this,&MainWindow::retCursorPos);
+    connect(editor,&QTextEdit::copyAvailable,copyAc,&QAction::setEnabled);
+    connect(editor,&QTextEdit::copyAvailable,cutAc,&QAction::setEnabled);
 
 }
 
