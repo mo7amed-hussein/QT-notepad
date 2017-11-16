@@ -58,7 +58,9 @@ void MainWindow::openDocument()
          while (! in.atEnd()) {
             editor->append(in.readLine());
          }
-         fileName= filePath;
+         this->filePath= filePath;
+         fileName= file.fileName();
+         this->setWindowTitle(fileName+" :: NotePad");
     }
 }
 
