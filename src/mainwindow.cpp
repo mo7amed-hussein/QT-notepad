@@ -174,3 +174,8 @@ void MainWindow::undo()
 {
     editor->undo();
 }
+
+void MainWindow::cut()
+{
+    editor->cut();
+}

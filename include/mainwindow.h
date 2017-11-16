@@ -23,6 +23,8 @@ public slots:
     void retCursorPos();
     void quitApp();
     void print();
+    void undo();
+    void cut();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
