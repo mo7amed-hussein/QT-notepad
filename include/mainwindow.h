@@ -23,7 +23,7 @@ public:
 protected:
 
    virtual bool event(QEvent * event);
-
+   virtual void closeEvent(QCloseEvent * event);
 signals:
 
 public slots:

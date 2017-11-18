@@ -12,6 +12,8 @@
 #include<QClipboard>
 #include<QMimeData>
 #include<QDebug>
+#include<QCloseEvent>
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -371,4 +373,10 @@ void MainWindow::checkClipboard()
     {
        pasteAc->setEnabled(false);
     }
+}
+
+void MainWindow::closeEvent(QCloseEvent * event)
+{
+    quitApp();
+    event->ignore();
 }
