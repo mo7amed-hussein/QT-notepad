@@ -9,7 +9,9 @@
 #include<QDateTime>
 #include<QInputDialog>
 #include<QFontDialog>
-
+#include<QClipboard>
+#include<QMimeData>
+#include<QDebug>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -345,4 +347,28 @@ void MainWindow::toggleStatusBar()
 void MainWindow::aboutPad()
 {
     QMessageBox::about(this,"about Notepad","<b>Notepad</b> was developed by <p> Mohamed Hussein <p> Nov,2017");
+}
+
+bool MainWindow::event(QEvent * event)
+{
+   if(event->type() == QEvent::Clipboard)
+   {
+       checkClipboard();
+   }
+ return QMainWindow::event(event);
+}
+
+void MainWindow::checkClipboard()
+{
+    qDebug()<<"clipboard";
+    const QClipboard *clipboard = QApplication::clipboard();
+    const QMimeData *mimeData = clipboard->mimeData();
+    if(mimeData->hasHtml()|mimeData->hasText()|mimeData->hasUrls())
+    {
+        pasteAc->setEnabled(true);
+    }
+    else
+    {
+       pasteAc->setEnabled(false);
+    }
 }

@@ -20,6 +20,10 @@ public:
     void echoTime();
     void selectAll();
     void gotoLine();
+protected:
+
+   virtual bool event(QEvent * event);
+
 signals:
 
 public slots:
@@ -34,6 +38,7 @@ public slots:
     void fontdialog();
     void toggleStatusBar();
     void aboutPad();
+    void checkClipboard();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
