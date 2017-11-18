@@ -310,3 +310,15 @@ void MainWindow::fontdialog()
         editor->setFont(padFont);
     }
 }
+
+void MainWindow::toggleStatusBar()
+{
+    if(this->statusBar()->isVisible())
+    {
+        this->statusBar()->setVisible(false);
+    }
+    else
+    {
+        this->statusBar()->setVisible(true);
+    }
+}
