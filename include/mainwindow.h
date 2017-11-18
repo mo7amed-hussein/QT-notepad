@@ -31,6 +31,7 @@ public slots:
     void cut();
     void copy();
     void wordwrap();
+    void fontdialog();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
@@ -41,6 +42,8 @@ private:
     QAction *copyAc;
     QAction *pasteAc;
     QAction *undoAc;
+
+    QFont padFont;
 };
 
 #endif // MAINWINDOW_H

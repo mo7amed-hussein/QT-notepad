@@ -8,6 +8,8 @@
 #include<QPrinter>
 #include<QDateTime>
 #include<QInputDialog>
+#include<QFontDialog>
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     //create editor
@@ -202,7 +204,7 @@ void MainWindow::createMenuBar()
 
     //font action
     QAction *fontAc = new QAction(tr("Font"),this);
-  //  connect(selectAc,&QAction::triggered,this,&MainWindow::selectAll);
+    connect(fontAc,&QAction::triggered,this,&MainWindow::fontdialog);
     formatMenu->addAction(fontAc);
 
 }
@@ -295,4 +297,16 @@ void MainWindow::wordwrap()
       editor->setWordWrapMode(QTextOption::NoWrap);
     }
 
+}
+
+void MainWindow::fontdialog()
+{
+    QFont curFont = editor->font();
+    bool ok;
+    QFont newFont = QFontDialog::getFont(&ok,curFont,this);
+    if(ok)
+    {
+        padFont= newFont;
+        editor->setFont(padFont);
+    }
 }
