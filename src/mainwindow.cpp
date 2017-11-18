@@ -191,6 +191,20 @@ void MainWindow::createMenuBar()
     connect(timeAc,&QAction::triggered,this,&MainWindow::echoTime);
     editMenu->addAction(timeAc);
 
+    //create formst menu
+    QMenu *formatMenu = menuBar()->addMenu(tr("&Format"));
+    //word wrap action
+    QAction *wrapAc = new QAction(tr("Word Wrap"),this);
+    wrapAc->setCheckable(true);
+    wrapAc->setChecked(false);
+    connect(wrapAc,&QAction::triggered,this,&MainWindow::wordwrap);
+    formatMenu->addAction(wrapAc);
+
+    //font action
+    QAction *fontAc = new QAction(tr("Font"),this);
+  //  connect(selectAc,&QAction::triggered,this,&MainWindow::selectAll);
+    formatMenu->addAction(fontAc);
+
 }
 
 void MainWindow::quitApp()
