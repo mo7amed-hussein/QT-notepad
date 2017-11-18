@@ -268,3 +268,17 @@ void MainWindow::gotoLine()
         //....
     }
 }
+
+void MainWindow::wordwrap()
+{
+    QTextOption::WrapMode old=editor->wordWrapMode();
+    if( old != QTextOption::NoWrap )
+    {
+        editor->setWordWrapMode(QTextOption::WordWrap);
+    }
+    else
+    {
+      editor->setWordWrapMode(QTextOption::NoWrap);
+    }
+
+}
