@@ -216,6 +216,16 @@ void MainWindow::createMenuBar()
     connect(statusAc,&QAction::triggered,this,&MainWindow::toggleStatusBar);
     viewMenu->addAction(statusAc);
 
+    //create help menu
+    QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
+    QAction *aboutAc = new QAction(tr("About"),this);
+    connect(aboutAc,&QAction::triggered,this,&MainWindow::aboutPad);
+    helpMenu->addAction(aboutAc);
+
+    QAction *aboutqtAc = new QAction(tr("About"),this);
+    connect(aboutqtAc,&QAction::triggered,qApp,&QApplication::aboutQt);
+    helpMenu->addAction(aboutqtAc);
+
 }
 
 void MainWindow::quitApp()
