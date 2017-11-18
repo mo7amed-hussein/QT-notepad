@@ -207,6 +207,15 @@ void MainWindow::createMenuBar()
     connect(fontAc,&QAction::triggered,this,&MainWindow::fontdialog);
     formatMenu->addAction(fontAc);
 
+    //create view menu
+    QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
+    //status bar action
+    QAction *statusAc = new QAction(tr("Status Bar"),this);
+    statusAc->setCheckable(true);
+    statusAc->setChecked(true);
+    connect(statusAc,&QAction::triggered,this,&MainWindow::toggleStatusBar);
+    viewMenu->addAction(statusAc);
+
 }
 
 void MainWindow::quitApp()
