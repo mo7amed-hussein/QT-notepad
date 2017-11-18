@@ -33,6 +33,7 @@ public slots:
     void wordwrap();
     void fontdialog();
     void toggleStatusBar();
+    void aboutPad();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label

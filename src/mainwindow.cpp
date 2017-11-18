@@ -331,3 +331,8 @@ void MainWindow::toggleStatusBar()
         this->statusBar()->setVisible(true);
     }
 }
+
+void MainWindow::aboutPad()
+{
+    QMessageBox::about(this,"about Notepad","<b>Notepad</b> was developed by <p> Mohamed Hussein <p> Nov,2017");
+}
