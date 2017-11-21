@@ -39,6 +39,7 @@ public slots:
     void toggleStatusBar();
     void aboutPad();
     void checkClipboard();
+    void deleteSelection();
 private:
     QTextEdit * editor;//text editor
     QLabel *cursorPosition;//editor cursor position label
@@ -49,7 +50,7 @@ private:
     QAction *copyAc;
     QAction *pasteAc;
     QAction *undoAc;
-
+    QAction *delAc;
     QFont padFont;
 };
 

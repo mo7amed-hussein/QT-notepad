@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(editor,&QTextEdit::cursorPositionChanged,this,&MainWindow::retCursorPos);
     connect(editor,&QTextEdit::copyAvailable,copyAc,&QAction::setEnabled);
     connect(editor,&QTextEdit::copyAvailable,cutAc,&QAction::setEnabled);
+    connect(editor,&QTextEdit::copyAvailable,delAc,&QAction::setEnabled);
 
 }
 
@@ -175,6 +176,13 @@ void MainWindow::createMenuBar()
     pasteAc->setEnabled(false);
     connect(pasteAc,&QAction::triggered,this,&MainWindow::paste);
     editMenu->addAction(pasteAc);
+
+    //delete action
+    delAc = new QAction(tr("Delete"),this);
+    delAc->setShortcut(QKeySequence::Delete);
+    delAc->setEnabled(false);
+    connect(delAc,&QAction::triggered,this,&MainWindow::deleteSelection);
+    editMenu->addAction(delAc);
 
     editMenu->addSeparator();
 
@@ -379,4 +387,9 @@ void MainWindow::closeEvent(QCloseEvent * event)
 {
     quitApp();
     event->ignore();
+}
+
+void MainWindow::deleteSelection()
+{
+    editor->textCursor().removeSelectedText();
 }
